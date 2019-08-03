@@ -25,13 +25,14 @@ const CharacterCard = (props) => {
   }
 
   return (
-    <Card>
-      <h2>{info.name}</h2>
-      <p>Born: {info.birth_year}</p>
-      <p>Gender: {info.gender}</p>
-      <p>Height: {info.height}</p>
-      <p>Mass: {info.mass}</p>
-      <p>URL: <a href={info.url}>{info.url}</a></p>
+    <Card href={info.url}>
+      <Card.Content>
+        <Card.Header>{info.name}</Card.Header>
+        <Card.Description>Born: {info.birth_year}</Card.Description>
+        <Card.Description>Gender: {info.gender}</Card.Description>
+        <Card.Description>Height: {info.height}</Card.Description>
+        <Card.Description>Mass: {info.mass}</Card.Description>
+      </Card.Content>
     </Card>
   )
 }
