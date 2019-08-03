@@ -13,31 +13,31 @@ const App = () => {
   // sync up with, if any.
   useEffect(() => {
     axios
-    .get("https://swapi.co/api/films/1/")
-    .then(res => {
-      setCharacters(res.data.characters);
-    })
-    .catch(error => {
-      console.log(error);
-    })
+      .get("https://swapi.co/api/films/1/")
+      .then(res => {
+        setCharacters(res.data.characters);
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }, []);
 
 
-  if(!characters){
+  if (!characters) {
     return (
       <div className="App">
         <h1 className="Header">Loading...</h1>
       </div>
     )
   }
-  else{
+  else {
     console.log(characters);
   }
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      
-      <CharacterList links={characters}/>
+
+      <CharacterList links={characters} />
     </div>
   );
 }
